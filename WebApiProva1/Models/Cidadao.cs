@@ -38,7 +38,7 @@ namespace WebAppiAula1.Models
         public Cidadao Inserir(Cidadao Cidadao)
         {
             var ListaCidadao = this.listaCidadao();
-            var maxId = ListaCidadao.Max(cidadao => cidadao.Gid);
+            var maxId= ListaCidadao.Max(cidadao => cidadao.Gid);
             Cidadao.Gid = maxId + 1;
             ListaCidadao.Add(Cidadao);
             ReescreverArquivo(ListaCidadao);
@@ -48,7 +48,7 @@ namespace WebAppiAula1.Models
         public Cidadao Atualizar(int Gid, Cidadao Cidadao)
         {
             var ListaCidadao = this.listaCidadao();
-            var itemIndex = ListaCidadao.FindIndex(p => p.Gid == Gid);
+            var itemIndex = ListaCidadao.FindIndex(a => a.Gid == Gid);
             if (itemIndex >= 0)
             {
                 Cidadao.Gid = Gid;
@@ -67,7 +67,7 @@ namespace WebAppiAula1.Models
         public bool Deletar(int Gid)
         {
             var ListaCidadao = this.listaCidadao();
-            var itemIndex = ListaCidadao.FindIndex(p => p.Gid == Gid);
+            var itemIndex = ListaCidadao.FindIndex(a => a.Gid == Gid);
             if (itemIndex >= 0)
             {
                 ListaCidadao.RemoveAt(itemIndex);
